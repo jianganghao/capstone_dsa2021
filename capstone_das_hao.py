@@ -23,11 +23,11 @@ with st.expander('Display the data'):
 
 # -- sidebar to filter data --
 st.sidebar.markdown('## Filter the Data')
-age_range = st.sidebar.slider('Please select age range',18, 70,(18,70))
-st.write(age_range)
+age_low, age_high = st.sidebar.slider('Please select age range',18, 70,(18,70))
+df = dfo.query('age>= @age_low and age <= @age_high')
 
 st.markdown('## Data Visualization')
-fig_hist = px.histogram(dfo,x='sum_score',color = 'gender',animation_frame = 'home_computer')
+fig_hist = px.histogram(df,x='sum_score',color = 'gender',animation_frame = 'home_computer')
 st.plotly_chart(fig_hist)
 
 clicked = st.button('Click to Celebrate!')
