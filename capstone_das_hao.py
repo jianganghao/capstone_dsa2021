@@ -32,5 +32,6 @@ st.plotly_chart(fig_hist,height = 900)
 
 clicked = st.button('Click to Celebrate!')
 if clicked:
-    st.balloons()
+    c1,c2,c3 = st.columns(3)
+    c2.balloons()
 
