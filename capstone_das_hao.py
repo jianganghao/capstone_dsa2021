@@ -18,9 +18,7 @@ st.latex(r'''R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}'
 #--- read in data ---
 df = read_data('data/data_capstone_dsa2021_2022.csv')
 
-show_data = st.button('Click to display data')
-
-if show_data:
+with st.expander('Display the data'):
     st.dataframe(df)
 
 st.markdown('## Data Summary')
