@@ -28,7 +28,7 @@ df = dfo.query('age>= @age_low and age <= @age_high')
 
 st.markdown('## Data Visualization')
 fig_hist = px.histogram(df,x='sum_score',color = 'gender',facet_row = 'home_computer')
-st.plotly_chart(fig_hist)
+st.plotly_chart(fig_hist,height = 900)
 
 clicked = st.button('Click to Celebrate!')
 if clicked:
