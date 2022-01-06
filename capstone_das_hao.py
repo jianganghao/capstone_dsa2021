@@ -11,6 +11,7 @@ def read_data(file_path_name):
 # -- title --
 st.title("Data Safari for Capstone Project")
 st.markdown('This dashboard is for the capstone project of DSA 2021-2022.' )
+st.latex(r'''R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}''')
 st.markdown('By: Jiangang Hao')
 
 #--- read in data ---
