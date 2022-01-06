@@ -13,8 +13,7 @@ df = pd.read_csv('data/data_capstone_dsa2021_2022.csv')
 st.dataframe(df)
 
 st.markdown('## Data Summary')
-select_category = st.selectbox('Please choose gender',['Male','Female'])
-st.write(select_category)
+select_category = st.sidebar.selectbox('Please choose gender',['Male','Female'])
 fig_hist = px.histogram(df.query('gender == @select_category'),x='sum_score',animation_frame = 'home_computer')
 st.plotly_chart(fig_hist)
 
