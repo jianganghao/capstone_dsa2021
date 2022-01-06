@@ -30,8 +30,9 @@ st.markdown('## Data Visualization')
 fig_hist = px.histogram(df,x='sum_score',color = 'gender',facet_row = 'home_computer')
 st.plotly_chart(fig_hist,height = 900)
 
+#--ballon --
+c1,c2,c3 = st.columns(3)
 clicked = st.button('Click to Celebrate!')
 if clicked:
-    c1,c2,c3 = st.columns(3)
     c2.balloons()
 
