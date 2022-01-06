@@ -16,15 +16,18 @@ st.latex(r'''R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}'
 
 
 #--- read in data ---
-df = read_data('data/data_capstone_dsa2021_2022.csv')
+dfo = read_data('data/data_capstone_dsa2021_2022.csv')
 
 with st.expander('Display the data'):
-    st.dataframe(df)
+    st.dataframe(dfo)
 
-st.markdown('## Data Summary')
+# -- sidebar to filter data --
 st.sidebar.markdown('## Filter the Data')
-select_category = st.sidebar.selectbox('Please choose gender',['Male','Female'])
-fig_hist = px.histogram(df.query('gender == @select_category'),x='sum_score',animation_frame = 'home_computer')
+age_range = st.sidebar.slider('Please select age range',18, 70,(18,70))
+st.write(age_range)
+
+st.markdown('## Data Visualization')
+fig_hist = px.histogram(df,x='sum_score',color = 'gender',animation_frame = 'home_computer')
 st.plotly_chart(fig_hist)
 
 clicked = st.button('Click to Celebrate!')
