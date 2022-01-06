@@ -17,3 +17,7 @@ select_category = st.sidebar.selectbox('Please choose gender',['Male','Female'])
 fig_hist = px.histogram(df.query('gender == @select_category'),x='sum_score',animation_frame = 'home_computer')
 st.plotly_chart(fig_hist)
 
+clicked = st.button('Click to Celebrate!')
+if clicked == True:
+    st.balloons()
+
