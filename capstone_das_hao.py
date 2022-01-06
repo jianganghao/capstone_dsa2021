@@ -16,7 +16,8 @@ st.markdown('By: Jiangang Hao')
 #--- read in data ---
 df = read_data('data/data_capstone_dsa2021_2022.csv')
 
-show_data = st.buttion('Click to display data')
+show_data = st.button('Click to display data')
+
 if show_data:
     st.dataframe(df)
 
